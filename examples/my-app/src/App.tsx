@@ -1,11 +1,32 @@
-import React, { Component, ReactNode, ReactElement, ReactChild } from 'react'
-import logo from './logo.svg'
+import React, { Component } from 'react'
 import './App.css'
-import { DependencyProvider, Dependency } from '../../../src/index'
+import {
+  DependencyProvider,
+  Dependency as DI,
+  dependencyFactory,
+} from './react-dependency-injection'
+
+function Bar() {
+  return (
+    <>
+      <DI.Baz />
+      <DI.Foo />
+    </>
+  )
+}
 
 class App extends Component {
   render() {
-    return <DependencyProvider foo={() => <p>Hola</p>}>5</DependencyProvider>
+    return (
+      <DependencyProvider
+        Bar={Bar}
+        Baz={() => 'Baz'}
+        Foo={({ world }: { world: string }) => <p>Hola {world}</p>}
+      >
+        <DI.Foo world="world foobar" />
+        <DI.Bar />
+      </DependencyProvider>
+    )
   }
 }
 
