@@ -1,0 +1,16 @@
+{
+  "name": "@dwerthen/react-dependency-injection",
+  "version": "1.0.0",
+  "description": "Dependency injection pattern for react components",
+  "main": "src/index.js",
+  "repository": "github.com/danielwerthen/react-dependency-injection",
+  "author": "<danielwerthen@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "^16.8.4"
+  },
+  "devDependencies": {
+    "react": "^16.8.4"
+  }
+}
