@@ -852,10 +852,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dwerthen/react-dependency-injection@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@dwerthen/react-dependency-injection/-/react-dependency-injection-0.0.2.tgz#df279014cef24489ed3e05aba67335bf9c97818b"
-  integrity sha512-KvMdt2CJoNKOFF+oQV2YkHcVBcLW9kwYHkoqgCw6JhkqmPvk0h7w0Afg7NqCp0KuJYGbmassyprcnuxo/QO75A==
+"@dwerthen/react-dependency-injection@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@dwerthen/react-dependency-injection/-/react-dependency-injection-0.0.3.tgz#3899f748378751b3345c185a1f28c57f8b7d2f13"
+  integrity sha512-3T/Zl0DWw9+KB7H6YBzuJQYuZkBLblvuCLqOUMCWfHjb0LBKX+g4jI6TKiTJWXXYhE4iFadP20SspCvzjBDUfQ==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
