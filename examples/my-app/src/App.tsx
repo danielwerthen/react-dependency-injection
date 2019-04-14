@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import './App.css'
 import {
   DependencyProvider,
-  Dependency as DI,
-  dependencyFactory,
+  Dependency,
 } from './react-dependency-injection'
 
 function Bar() {
   return (
     <>
-      <DI.Baz />
-      <DI.Foo />
+      <Dependency.Baz />
+      <Dependency.Foo />
     </>
   )
 }
@@ -23,8 +22,8 @@ class App extends Component {
         Baz={() => 'Baz'}
         Foo={({ world }: { world: string }) => <p>Hola {world}</p>}
       >
-        <DI.Foo world="world foobar" />
-        <DI.Bar />
+        <Dependency.Foo world="world foobar" />
+        <Dependency.Bar />
       </DependencyProvider>
     )
   }

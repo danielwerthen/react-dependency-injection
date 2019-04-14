@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "react": "^16.8.4"
-  }
+  },
+  "files": [
+    "/src"
+  ]
 }

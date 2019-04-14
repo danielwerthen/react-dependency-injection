@@ -11,7 +11,7 @@ export type ProviderType = React.SFC<
   }>
 >
 
-export function dependencyFactory<T>(options: {
+export function createDependencyContext<T>(options: {
   defaultDependencies?: { [key: string]: Component }
   factory?: (name: string, context: T) => Component
   factoryContext?: T

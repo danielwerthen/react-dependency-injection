@@ -16,12 +16,12 @@ MetaObject.prototype = new Proxy(MetaObject.prototype, {
   },
 })
 
-export function dependencyFactory({
+export function createDependencyContext({
   defaultDependencies = {},
   factory,
   factoryContext = {},
   Fallback = ({ name }) => (
-    <p>This is placeholder for a dependency named {name} that is missing</p>
+    <p>This is placeholder for a dependency named {name}</p>
   ),
 } = {}) {
   const dependencyContext = React.createContext({
@@ -61,10 +61,10 @@ export function dependencyFactory({
 
   function useDependency(name) {
     const { dependencies } = React.useContext(dependencyContext)
-    if (!factory) {
+    if (dependencies[name]) {
       return dependencies[name]
     }
-    if (dependencies[name]) {
+    if (!factory) {
       return dependencies[name]
     }
     if (!factoryCache[name]) {
@@ -86,6 +86,6 @@ const {
   DependencyProvider,
   useDependency,
   dependencyContext,
-} = dependencyFactory()
+} = createDependencyContext()
 
 export { Dependency, DependencyProvider, useDependency, dependencyContext }
