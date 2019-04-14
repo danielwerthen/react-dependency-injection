@@ -1,6 +1,6 @@
 {
   "name": "@dwerthen/react-dependency-injection",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Dependency injection pattern for react components",
   "main": "lib/index.js",
   "repository": "github.com/danielwerthen/react-dependency-injection",
