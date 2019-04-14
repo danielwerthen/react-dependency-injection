@@ -2,18 +2,25 @@
   "name": "@dwerthen/react-dependency-injection",
   "version": "0.0.2",
   "description": "Dependency injection pattern for react components",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "repository": "github.com/danielwerthen/react-dependency-injection",
   "author": "<danielwerthen@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "babel src -d lib --copy-files",
+    "prepublish": "npm run build"
+  },
   "peerDependencies": {
     "react": "^16.8.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "react": "^16.8.4"
   },
   "files": [
-    "/src"
+    "/lib"
   ]
 }
