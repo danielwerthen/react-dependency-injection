@@ -5,16 +5,17 @@ This library provides the functionality of dependency injection of React compone
 ## Basic usage
 
 ```javascript
+import React from 'react'
 import {
   Dependency,
   DependencyProvider,
 } from '@dwerthen/react-dependency-injection'
 
-function MyButton(props) {
+function MyButton(props: any) {
   return <button style={{ color: 'red' }} {...props} />
 }
 
-function MyComponent() {
+export default function BasicUsage() {
   return (
     <DependencyProvider Button={MyButton}>
       <Dependency.Button>Click me</Dependency.Button>
@@ -28,6 +29,7 @@ function MyComponent() {
 If you want to use a separate namespace to encapsulate a set of components, use the function `createDependencyContext`.
 
 ```javascript
+import React from 'react'
 import {
   Dependency,
   DependencyProvider,
@@ -37,16 +39,16 @@ import {
 const {
   Dependency: Dependency2,
   DependencyProvider: DependencyProvider2,
-} = createDependencyContext()
+} = createDependencyContext({})
 
-function MyButton(props) {
+function MyButton(props: any) {
   return <button style={{ color: 'red' }} {...props} />
 }
-function MyOtherButton(props) {
+function MyOtherButton(props: any) {
   return <button style={{ color: 'blue' }} {...props} />
 }
 
-function MyComponent() {
+export default function SeparateNamespace() {
   return (
     <DependencyProvider Button={MyButton}>
       <DependencyProvider2 Button={MyOtherButton}>
@@ -63,17 +65,14 @@ function MyComponent() {
 When creating a dependencyContext you can also provide a factory function, which creates dependencies lazily if no matching dependency has been provided.
 
 ```javascript
-import {
-  Dependency,
-  DependencyProvider,
-  createDependencyContext,
-} from '@dwerthen/react-dependency-injection'
+import React from 'react'
+import { createDependencyContext } from '@dwerthen/react-dependency-injection'
 
 const { Dependency, DependencyProvider } = createDependencyContext({
   factory: name => props => <p>This is created component named {name}</p>,
 })
 
-function MyComponent() {
+export default function DependencyFactory() {
   return (
     <DependencyProvider Button={() => <p>Not factory produced</p>}>
       <Dependency.Button />

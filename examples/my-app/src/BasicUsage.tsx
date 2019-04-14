@@ -8,7 +8,7 @@ function MyButton(props: any) {
   return <button style={{ color: 'red' }} {...props} />
 }
 
-export default function MyComponent() {
+export default function BasicUsage() {
   return (
     <DependencyProvider Button={MyButton}>
       <Dependency.Button>Click me</Dependency.Button>

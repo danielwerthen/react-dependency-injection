@@ -8,7 +8,7 @@ import {
 const {
   Dependency: Dependency2,
   DependencyProvider: DependencyProvider2,
-} = createDependencyContext()
+} = createDependencyContext({})
 
 function MyButton(props: any) {
   return <button style={{ color: 'red' }} {...props} />
@@ -17,7 +17,7 @@ function MyOtherButton(props: any) {
   return <button style={{ color: 'blue' }} {...props} />
 }
 
-export default function MyComponent() {
+export default function SeparateNamespace() {
   return (
     <DependencyProvider Button={MyButton}>
       <DependencyProvider2 Button={MyOtherButton}>

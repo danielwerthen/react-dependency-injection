@@ -20,9 +20,12 @@ export function createDependencyContext({
   defaultDependencies = {},
   factory,
   factoryContext = {},
-  Fallback = ({ name }) => (
-    <p>This is placeholder for a dependency named {name}</p>
-  ),
+  Fallback = ({ name }) =>
+    React.createElement(
+      'p',
+      {},
+      'This is placeholder for a dependency named ' + name,
+    ),
 } = {}) {
   const dependencyContext = React.createContext({
     dependencies: defaultDependencies,
@@ -35,9 +38,9 @@ export function createDependencyContext({
       const Component = props => {
         const DComponent = useDependency(property)
         if (!DComponent) {
-          return <Fallback name={property} />
+          return React.createElement(Fallback, { name: property })
         }
-        return <DComponent {...props} />
+        return React.createElement(DComponent, props)
       }
       Object.defineProperty(Component, 'name', {
         value: `Inject(${property})`,
@@ -52,10 +55,10 @@ export function createDependencyContext({
   const Dependency = new DependencyStore()
 
   function DependencyProvider({ children, ...dependencies }) {
-    return (
-      <dependencyContext.Provider value={{ dependencies }}>
-        {children}
-      </dependencyContext.Provider>
+    return React.createElement(
+      dependencyContext.Provider,
+      { value: { dependencies } },
+      children,
     )
   }
 
